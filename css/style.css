@@ -1,0 +1,485 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/*global*/
+
+body,
+html {
+    font-size: 15px;
+}
+
+body {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: rgba(133, 75, 2, 1);
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+
+/*specifics*/
+
+
+/*nav*/
+
+
+/*toggle*/
+
+.toggle {
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    z-index: 999;
+    transition: all .5s;
+    background: #000000;
+    border-radius: 1000px;
+}
+
+.toggle-active {
+    background: #0000000a;
+}
+
+.menu-toggle {
+    transform: translateX(0%);
+}
+
+.toggle-icon .menu-icon {
+    transform: scale(1);
+}
+
+.menu-icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.menu-icon .menu-icon__cheeckbox {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-touch-callout: none;
+    position: absolute;
+    opacity: 0;
+}
+
+.menu-icon div {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 22px;
+    height: 12px;
+}
+
+.menu-icon span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 1px;
+    transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+}
+
+.menu-icon span:first-of-type {
+    top: 0;
+}
+
+.menu-icon span:last-of-type {
+    bottom: 0;
+}
+
+.menu-icon.active span:first-of-type,
+.menu-icon .menu-icon__cheeckbox:checked+div span:first-of-type {
+    transform: rotate(45deg);
+    top: 5px;
+}
+
+.menu-icon.active span:last-of-type,
+.menu-icon .menu-icon__cheeckbox:checked+div span:last-of-type {
+    transform: rotate(-45deg);
+    bottom: 5px;
+}
+
+.menu-icon.active:hover span:first-of-type,
+.menu-icon.active:hover span:last-of-type,
+.menu-icon:hover .menu-icon__cheeckbox:checked+div span:first-of-type,
+.menu-icon:hover .menu-icon__cheeckbox:checked+div span:last-of-type {
+    width: 22px;
+}
+
+@media (min-width: 1024px) {
+    .menu-icon:hover span:first-of-type {
+        width: 26px;
+    }
+    .menu-icon:hover span:last-of-type {
+        width: 12px;
+    }
+}
+
+header {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-background {
+    position: fixed!important;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgb(133, 75, 2);
+    background: linear-gradient(5deg, rgba(133, 75, 2, 1) 0%, rgba(245, 191, 107, 1) 100%);
+}
+
+nav {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+nav>.logo {
+    margin-bottom: 10px;
+}
+
+nav>div {
+    max-width: 80%;
+}
+
+nav>div:nth-child(1) {
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav>div>div {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.profil-logo {
+    border-radius: 1000px;
+    overflow: hidden;
+    width: max-content;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+}
+
+.profil-logo>img {
+    position: relative;
+    left: -2px;
+    width: 80px;
+}
+
+.profil-logo,
+.account-settings>form>label,
+.account-settings>form>input,
+.account-settings>form>h2 {
+    margin-bottom: 5px;
+}
+
+.account-settings {
+    max-width: 100%;
+}
+
+.account-settings>form {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-settings>form>label {
+    text-align: center;
+}
+
+.account-settings>form>input {
+    border-radius: 1000px;
+    border: none;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.tags>input {
+    position: absolute;
+    left: -100000px;
+}
+
+.tags>label {
+    padding: 5px 12px;
+    margin: 5px;
+    border-radius: 1000px;
+    user-select: none;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.tags>input:checked+label {
+    color: #fff;
+    background: #3d3d3d;
+}
+
+form>div {
+    margin-bottom: 5px;
+}
+
+form>button {
+    padding: 5px 10px;
+    border-radius: 1000px;
+    background: #3d3d3d!important;
+    border: none;
+    color: #fff;
+}
+
+
+/*main*/
+
+main {
+    z-index: 0;
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*responsive*/
+
+@media screen and (min-width: 1000px) {
+    body,
+    html {
+        font-size: 17px;
+    }
+    .toggle {
+        display: none;
+    }
+    header {
+        transform: translateX(0%);
+        position: relative;
+        width: 23.5%;
+        max-width: 500px;
+        min-width: 275px;
+    }
+    form>div {
+        margin-bottom: 5px;
+    }
+    form>h3 {
+        margin: 3% 0;
+    }
+    .profil-logo,
+    .account-settings>form>label,
+    .account-settings>form>input,
+    .account-settings>form>h2 {
+        margin-bottom: 2.5%;
+    }
+    nav>.logo {
+        margin-bottom: 3%;
+    }
+    form>button {
+        padding: 15px 30px;
+        display: flex;
+        justify-content: start;
+    }
+    nav>.logo {
+        position: static;
+    }
+}
+
+@media screen and (max-height: 460px) {
+    .nav-background {
+        height: 130%;
+    }
+    nav>.logo {
+        position: absolute;
+        right: 15px!important;
+        top: 15px;
+        right: 0;
+    }
+}
