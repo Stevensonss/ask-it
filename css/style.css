@@ -463,6 +463,29 @@ form>button {
     transform: rotate(45deg);
 }
 
+.account-profil,
+.connexion,
+.inscription {
+    cursor: pointer;
+}
+
+.account-profil {
+    color: red;
+    display: none!important;
+}
+
+.connexion>div>a:nth-child(1) {
+    font-weight: bold;
+}
+
+.inscription>div>a:nth-child(2) {
+    font-weight: bold;
+}
+
+.log-hidden {
+    display: none!important;
+}
+
 
 /*main*/
 
@@ -472,61 +495,72 @@ main {
     background: #fff;
     width: 100%;
     min-height: 100%;
-    display:flex;
+    display: flex;
     align-items: center;
-    flex-direction:column;
+    flex-direction: column;
 }
 
-main > div {
-    width:90%;
+main>div {
+    width: 90%;
 }
 
 .question {
-    margin-top:75px;
-    max-width:100%;
+    margin-top: 75px;
+    max-width: 100%;
 }
 
-.question-container > div {
-    border:solid 1px #ededed;
-    border-radius:10px;
-    padding:20px;
-    max-width:525px;
+.question-container>div {
+    border: solid 1px #ededed;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 525px;
 }
 
-.question-container, .container, .container:only-child {
-    margin:0 auto;
-    max-width:max-content;
+.question-container,
+.container,
+.container:only-child {
+    margin: 0 auto;
+    max-width: max-content;
 }
 
-.my-question, .all-question {
-    position:relative;
+.my-question,
+.all-question {
+    position: relative;
     max-height: 45vh;
     height: 400px;
 }
 
 .question-list {
     max-height: 80%;
-    overflow:hidden;
+    overflow: hidden;
     overflow-y: scroll;
 }
 
-.question-list > ul > li {margin: 25px 0;}
-
-.question-list > ul > li,.question-list > ul > li > ul {
-    display:flex;
-    justify-content:space-between;
+.question-list>ul>li {
+    margin: 25px 0;
 }
 
-.question-list > ul > li > h3 {
+.question-list>ul>li,
+.question-list>ul>li>ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.question-list>ul>li>h3 {
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
 }
 
-.question-list > ul > li > ul > li {margin-left: 20px;}
+.question-list>ul>li>ul>li {
+    margin-left: 20px;
+}
 
-
-.info-question {display:flex; justify-content:space-between; flex-direction:column;}
+.info-question {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
 
 
 /*responsive*/
@@ -599,14 +633,14 @@ main > div {
         position: static;
     }
     .question {
-        display:flex;
+        display: flex;
         justify-content: center;
     }
-
-    .question-container {margin:0 25px;}
-
-    .question-container > div {
-        max-width:475px;
+    .question-container {
+        margin: 0 25px;
+    }
+    .question-container>div {
+        max-width: 475px;
     }
 }
 
