@@ -111,7 +111,7 @@
 
                         /*pas de class log-hidden = formulaire afficher par défaut si non connecté*/
                         echo'
-                        <form class="inscription" action="inscription.php" method="post">
+                        <form class="inscription" action="index.php" method="post">
                             <div class="">
                                 <div>
                                     <a>connexion</a>
@@ -119,11 +119,11 @@
                                 </div>
                                 <h2>Inscription</h2>
                                 <label for="fname">nom</label>
-                                <input type="text" id="fname" name="fname">
-                                <label for="email">email</label>
-                                <input type="text" id="email" name="email">
-                                <label for="password">password</label>
-                                <input type="password" id="password" name="password">
+                                <input type="name" id="fname" name="fname">
+                                <label for="registerEmail">email</label>
+                                <input type="email" id="registerEmail" name="registerEmail">
+                                <label for="registerPassword">password</label>
+                                <input type="password" id="registerPassword" name="registerPassword">
                             </div>
                             
                             <button type="submit" class="registerbtn">
@@ -132,6 +132,13 @@
                             </button>
                         </form>
                         ';
+                        $name = $_POST["fname"];
+                        $email = $_POST["registerEmail"];
+                        $password = $_POST["registerPassword"];
+
+                        if(!empty($name)  && !empty($email) && !empty($password)){
+
+                        } else {}
                     }
                     ?>
                     </div>
