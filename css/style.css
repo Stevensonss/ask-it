@@ -470,15 +470,14 @@ form>button {
 }
 
 .account-profil {
-    color: red;
-    display: none!important;
+    
 }
 
-.connexion>div>a:nth-child(1) {
+.connexion>div>div>a:nth-child(1) {
     font-weight: bold;
 }
 
-.inscription>div>a:nth-child(2) {
+.inscription>div>div>a:nth-child(2) {
     font-weight: bold;
 }
 

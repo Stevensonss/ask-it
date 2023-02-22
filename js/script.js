@@ -1,3 +1,4 @@
+/*navbar*/
 const toggle = document.querySelector('.toggle');
 const header = document.querySelector('header');
 
@@ -7,8 +8,10 @@ toggle.addEventListener("click", function() {
     toggle.classList.toggle('toggle-active')
 })
 
-const inscriptionLink = document.querySelector('.inscription>div>a:nth-child(1)');
-const connexionLink = document.querySelector('.connexion>div>a:nth-child(2)');
+
+/*login-register-switch*/
+const inscriptionLink = document.querySelector('.inscription>div>div>a:nth-child(1)');
+const connexionLink = document.querySelector('.connexion>div>div>a:nth-child(2)');
 
 const inscription = document.querySelector('.inscription');
 const connexion = document.querySelector('.connexion')
