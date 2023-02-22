@@ -167,7 +167,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <h3>Qu'elle technologie introduire dans son projet pour l'accélérer ?</h3>
+                                <h3>Quelle technologie introduire dans son projet pour l'accélérer ?</h3>
                                 <ul>
                                     <li><a class="cat" href="categorie">css</a></li>
                                     <li><a class="view-question" href="#voir">voir</a></li>
@@ -232,11 +232,21 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="search-bar">
-                        <input type="text" id="search" name="search-bar">
+                    
+                    <div id=searchContainer>
+                        <div class="wrap">
+                            <div class="search">
+                                <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                                <button type="submit" class="searchButton">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
+            <br/>
             <div class="question-container">
                 <h2>Toutes les questions</h2>
                 <div class="all-question">
@@ -313,34 +323,45 @@
                                 </ul>
                             </li>
                         </ul>
+                    </div>       
+                    
+                    <div id=searchContainer>
+                        <div class="wrap">
+                            <div class="search">
+                                <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                                <button type="submit" class="searchButton">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="search-bar">
-                        <input type="text" id="search" name="search-bar">
-                    </div>
+
                 </div>
             </div>
         </div>
+        
+        
         <div class="container">
-            <h2>Cr&eacute;er une question</h2>
+            <h2>Créer une question</h2>
             <div class="new-question">
-                <div class="new-question-setings">
+                <div class="new-question-settings">
                     <div class="new-question-title"></div>
                     <ul>
-                        <li>
+                        <li class=questionMark>
                             <input type="checkbox" name="brouillon" id="brouillon">
                             <label for="brouillon">Cr&eacute;er cette question en tant que brouillon</label>
                         </li>
-                        <li>
+                        <li class=questionMark>
                             <input type="checkbox" name="priority" id="priority">
                             <label for="priority">D&eacute;clarer cette question comme urgente</label>
                         </li>
                     </ul>
                 </div>
                 <div class="info-question">
-                    <input type="text" name="question">
-                    <textarea name="description-question"></textarea>
+                    <input class=questionMark type="text" name="question">
+                    <textarea class=questionMark name="description-question"></textarea>
                 </div>
-                <button type="submit" class="create-question-btn">
+                <button class=questionMark type="submit" class="create-question-btn">
                     Cr&eacute;er ma question
                     <div class="icon-arrow"></div>
                 </button>
