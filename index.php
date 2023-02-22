@@ -111,7 +111,7 @@
 
                         /*pas de class log-hidden = formulaire afficher par défaut si non connecté*/
                         echo'
-                        <form class="inscription" action="index.php" method="post">
+                        <form class="inscription" action="inscription.php" method="post">
                             <div class="">
                                 <div>
                                     <a>connexion</a>
@@ -132,13 +132,7 @@
                             </button>
                         </form>
                         ';
-                        $name = $_POST["fname"];
-                        $email = $_POST["registerEmail"];
-                        $password = $_POST["registerPassword"];
-
-                        if(!empty($name)  && !empty($email) && !empty($password)){
-
-                        } else {}
+                        
                     }
                     ?>
                     </div>
