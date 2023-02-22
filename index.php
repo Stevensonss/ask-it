@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" defer async src="js/script.js"></script>
+    <?php include'function.php'; ?>
 </head>
 
 <body>
@@ -34,6 +35,13 @@
                 <div class="profil">
                     <div class="profil-logo"><img alt="profil-logo" src="images/1x/Fichier 1-80.jpg"></div>
                     <div class="account-settings">
+
+                    <?php
+                    $connect = is_connect();/*boolean if user is connect*/
+
+                    if ($connect) {
+                        /*formulaire afficher par défaut si connecté*/
+                        echo'
                         <form action="index.html" method="post">
                             <div class="account-profil">
                                 <div>
@@ -41,31 +49,7 @@
                                     <a>d&eacute;connexion</a>
                                 </div>
                                 <h2>Profil</h2>
-                                <label for="fname">nom</label>
-                                <input type="text" id="fname" name="fname">
-                                <label for="email">email</label>
-                                <input type="text" id="email" name="email">
-                                <label for="password">password</label>
-                                <input type="password" id="password" name="password">
-                            </div>
-                            <div class="connexion">
-                                <div>
-                                    <a class="form-active">connexion</a>
-                                    <a>inscription</a>
-                                </div>
-                                <h2>Connexion</h2>
-                                <label for="email">email</label>
-                                <input type="text" id="email" name="email">
-                                <label for="password">password</label>
-                                <input type="password" id="password" name="password">
-                            </div>
-                            <div class="log-hidden inscription">
-                                <div>
-                                    <a>connexion</a>
-                                    <a class="form-active">inscription</a>
-                                </div>
-                                <h2>Inscription</h2>
-                                <label for="fname">nom</label>
+                                <label for="name">nom</label>
                                 <input type="text" id="fname" name="fname">
                                 <label for="email">email</label>
                                 <input type="text" id="email" name="email">
@@ -100,6 +84,57 @@
                                 <div class="icon-arrow"></div>
                             </button>
                         </form>
+                        ';
+                    } else {
+                        /*switch des formulaires inscription et connexion avec JavaScript*/
+                        /*class log-hidden = formulaire masquer par défaut si non connecté*/
+                        echo'    
+                        <form class="connexion log-hidden" action="index.html" method="post">
+                            <div class="">
+                                <div>
+                                    <a class="form-active">connexion</a>
+                                    <a>inscription</a>
+                                </div>
+                                <h2>Connexion</h2>
+                                <label for="email">email</label>
+                                <input type="text" id="email" name="email">
+                                <label for="password">password</label>
+                                <input type="password" id="password" name="password">
+                            </div>
+                            
+                            <button type="submit" class="registerbtn">
+                                Enregistrer
+                                <div class="icon-arrow"></div>
+                            </button>
+                        </form>
+                        ';
+
+                        /*pas de class log-hidden = formulaire afficher par défaut si non connecté*/
+                        echo'
+                        <form class="inscription" action="inscription.php" method="post">
+                            <div class="">
+                                <div>
+                                    <a>connexion</a>
+                                    <a class="form-active">inscription</a>
+                                </div>
+                                <h2>Inscription</h2>
+                                <label for="fname">nom</label>
+                                <input type="name" id="fname" name="fname">
+                                <label for="registerEmail">email</label>
+                                <input type="email" id="registerEmail" name="registerEmail">
+                                <label for="registerPassword">password</label>
+                                <input type="password" id="registerPassword" name="registerPassword">
+                            </div>
+                            
+                            <button type="submit" class="registerbtn">
+                                Enregistrer
+                                <div class="icon-arrow"></div>
+                            </button>
+                        </form>
+                        ';
+                        
+                    }
+                    ?>
                     </div>
                 </div>
 
